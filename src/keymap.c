@@ -10,6 +10,17 @@ enum layer_names {
 #define L1 MO(_L1)
 #define L2 MO(_L2)
 
+// Aliases for home-row keys with mode-tap in GASC modifiers order
+#define MT_A LGUI_T(KC_A)
+#define MT_R LALT_T(KC_R)
+#define MT_S LSFT_T(KC_S)
+#define MT_T LCTL_T(KC_T)
+
+#define MT_O GUI_T(KC_O)
+#define MT_I ALT_T(KC_I)
+#define MT_E SFT_T(KC_E)
+#define MT_N CTL_T(KC_N)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_BASE] = LAYOUT(
@@ -18,9 +29,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                               KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSLS,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LCTL, KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                               KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
+     KC_LCTL, MT_A,    MT_R,    MT_S,    MT_T,    KC_G,                               KC_M,    MT_N,    MT_E,    MT_I,    MT_O,    KC_QUOT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_HOME,          KC_END,  KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_HOME,          KC_END,  KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_GRV ,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     L1,      _______, KC_ENT,                    KC_BSPC, KC_SPC,  L2
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
